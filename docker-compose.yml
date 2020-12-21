@@ -1,0 +1,15 @@
+version: "3.1"
+
+services:
+  db:
+    container_name: mongoDB
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./docker/db:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=assessment
+    ports:
+      - 11111:27017
+#  vehicles-api:
+#    container_name: vehicles-api
